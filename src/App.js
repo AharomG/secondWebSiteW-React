@@ -55,14 +55,16 @@ function App() {
       return isOpenTetris;
   }
 
+  console.log(info);
+
   return (
-    <>
+    <span className="container">
       <Welcome/>
       <span className='modals' >
         {!error ? (
           info.map((el) => {
-            return (<div onClick={() => openModal(el)} key={el.id}>
-              <p className="clickModal">test</p>
+            return (<span className="clickModal" onClick={() => openModal(el)} key={el.id}>
+              <p>{el.name}</p>
               <Modal isOpen={handleModalState(el)} name={el.name} closeModal={() => closeModal(el)}>
               <img src="http://www.placeimg.com/400/100/tech" alt={el.name}/>
               <p>{el.description}<br/>
@@ -76,7 +78,7 @@ function App() {
               </a>
               </p>
               </Modal>
-            </div>)
+            </span>)
           })) : (
             <div className='error'>
               <p>There has been an error with github API, error code: {error.status}</p>
@@ -85,11 +87,11 @@ function App() {
         }
       </span>
       <span className='boxes'>
-        <Box link="https://github.com/AharomG" name="GitHub" imgURL={Octocat}/>
+        <Box link="https://github.com/AharomG" name="GitHub" imgURL={Octocat} />
         <Box link="https://www.linkedin.com/in/aharom-gonzalez-anaure/" name="LinkedIn" imgURL={linkedin}/>
         <Box link="https://drive.google.com/file/d/1sjFKlQaiXjihU1mOBKqfWAg3-33xPJjQ/view?usp=sharing" name="Resumee" imgURL={cv}/>
       </span>
-    </>
+    </span>
     );
 }
 

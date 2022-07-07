@@ -4,9 +4,12 @@
     top: 0;
     width: 100%;
     min-height: 100vh;
-    background-color: rgba(0, 0, 0, .25);
+    background-color: rgba(0, 0, 0, .55);
     display: none;
     justify-content: center;
+}
+.modals{
+    display: flex;
 }
 
 .modal.isOpen{
@@ -33,4 +36,10 @@
 
 .clickModal{
     cursor: pointer;
+}
+
+.clickModal p{
+    background-color: grey;
+    display: inline-flex;
+    border-style: dotted;
 }

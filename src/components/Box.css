@@ -1,0 +1,27 @@
+.boxes{
+    --boxSize: 9vh;
+    --i: 10%;
+}
+.box {
+    overflow: hidden;
+    position: relative;
+    top: calc(15%+var(--i));
+    background-color: grey;
+    width: var(--boxSize);
+    min-width: 21px;
+    height: var(--boxSize);
+    min-height: 21px;
+    border-radius: 50%;
+    margin-bottom: 2%;
+    left: -4%;
+    transition: all 1s ease;
+}
+.box a {
+    width: var(--boxSize);
+    height: var(--boxSize);
+}
+.box img{
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+}
