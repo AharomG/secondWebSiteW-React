@@ -1,6 +1,6 @@
 import React from "react";
 import './Welcome.css';
-import Home from "../assets/home.png"
+import Home from "../assets/welcome.png"
 
 const Welcome = () => {
     return(
@@ -11,7 +11,7 @@ const Welcome = () => {
                 target="_blank"
                 rel="noopener noreferrer"
             >
-                <img src={Home} alt="Home"/>
+                <img src={Home} alt="Welcome"/>
             </a>
             <p>
                 Hello! Welcome to my page. I'm an informatics engineer student about to go into his 4th year of carrer, I made this site to show a little bit of my skills. Here I have all of my other projects. Enjoy cheking the code! 

@@ -1,11 +1,9 @@
 .boxes{
     --boxSize: 9vh;
-    --i: 10%;
 }
 .box {
+    position: fixed;
     overflow: hidden;
-    position: relative;
-    top: calc(15%+var(--i));
     background-color: grey;
     width: var(--boxSize);
     min-width: 21px;
@@ -14,7 +12,8 @@
     border-radius: 50%;
     margin-bottom: 2%;
     left: -4%;
-    transition: all 1s ease;
+    top: calc(10vh*var(--i));
+    transition: transform 1s ease;
 }
 .box a {
     width: var(--boxSize);

@@ -39,7 +39,10 @@
 }*/
 
 
-.container{
+.information{
   width: 75%;
   background-color: grey;
+  margin: 0 auto;
+  height: auto;
+  min-height: 100vh;
 }

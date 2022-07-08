@@ -58,40 +58,42 @@ function App() {
   console.log(info);
 
   return (
-    <span className="container">
-      <Welcome/>
-      <span className='modals' >
-        {!error ? (
-          info.map((el) => {
-            return (<span className="clickModal" onClick={() => openModal(el)} key={el.id}>
-              <p>{el.name}</p>
-              <Modal isOpen={handleModalState(el)} name={el.name} closeModal={() => closeModal(el)}>
-              <img src="http://www.placeimg.com/400/100/tech" alt={el.name}/>
-              <p>{el.description}<br/>
-              <a 
-                className='modalsLink'
-                href={el.html_url}
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                Link to the project github.
-              </a>
-              </p>
-              </Modal>
-            </span>)
-          })) : (
+    <div className="container">
+      <div className="information">
+        <Welcome/>
+        <div className='modals' >
+          {!error ? (
+            info.map((el) => {
+              return (<span className="clickModal" onClick={() => openModal(el)} key={el.id}>
+                <p>{el.name}</p>
+                <Modal isOpen={handleModalState(el)} name={el.name} closeModal={() => closeModal(el)}>
+                <img src="http://www.placeimg.com/400/100/tech" alt={el.name}/>
+                <p>{el.description}<br/>
+                <a 
+                  className='modalsLink'
+                  href={el.html_url}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  Link to the project github.
+                </a>
+                </p>
+                </Modal>
+              </span>)
+            })) : (
             <div className='error'>
               <p>There has been an error with github API, error code: {error.status}</p>
             </div>
-          ) 
-        }
-      </span>
-      <span className='boxes'>
-        <Box link="https://github.com/AharomG" name="GitHub" imgURL={Octocat} />
-        <Box link="https://www.linkedin.com/in/aharom-gonzalez-anaure/" name="LinkedIn" imgURL={linkedin}/>
-        <Box link="https://drive.google.com/file/d/1sjFKlQaiXjihU1mOBKqfWAg3-33xPJjQ/view?usp=sharing" name="Resumee" imgURL={cv}/>
-      </span>
-    </span>
+            ) 
+          }
+        </div>
+      </div>
+      <div className='boxes'>
+        <Box link="https://github.com/AharomG" name="GitHub" imgURL={Octocat} varStyle="1"/>
+        <Box link="https://www.linkedin.com/in/aharom-gonzalez-anaure/" name="LinkedIn" imgURL={linkedin} varStyle="2"/>
+        <Box link="https://drive.google.com/file/d/1sjFKlQaiXjihU1mOBKqfWAg3-33xPJjQ/view?usp=sharing" name="Resumee" imgURL={cv} varStyle="3"/>
+      </div>
+    </div>
     );
 }
 
