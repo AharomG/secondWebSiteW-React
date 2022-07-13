@@ -7,6 +7,7 @@ import Modal from './components/Modal.js';
 import { useFetch } from './hooks/useFetch.js';
 import { useModal } from "./hooks/useModal.js"
 import Box from "./components/Box.js"
+import Header from "./components/Header";
 
 function App() {
   const {info, error} = useFetch("https://api.github.com/users/aharomg/repos");
@@ -58,10 +59,11 @@ function App() {
   console.log(info);
 
   return (
-    <div className="container">
+    <div className="container">    
       <div className="information">
+        <Header/>
         <Welcome/>
-        <div className='modals' >
+        <div className='modals'>
           {!error ? (
             info.map((el) => {
               return (<span className="clickModal" onClick={() => openModal(el)} key={el.id}>
