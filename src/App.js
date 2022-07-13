@@ -8,6 +8,8 @@ import { useFetch } from './hooks/useFetch.js';
 import { useModal } from "./hooks/useModal.js"
 import Box from "./components/Box.js"
 import Header from "./components/Header";
+import ThemeContext, { ThemeProvider } from "./context/ThemeContext";
+import { useContext } from "react";
 
 function App() {
   const {info, error} = useFetch("https://api.github.com/users/aharomg/repos");
@@ -16,6 +18,7 @@ function App() {
   const [isOpensecondWebSiteWReact, openModalsecondWebSiteWReact, closeModalsecondWebSiteWReact] = useModal(false);
   const [isOpenSPA_Website, openModalSPA_Website, closeModalSPA_Website] = useModal(false);
   const [isOpenTetris, openModalTetris, closeModalTetris] = useModal(false);
+  const {theme} = useContext(ThemeContext)
 
   function openModal(el){
     if(el.name === "FirstWebSite")
@@ -56,17 +59,16 @@ function App() {
       return isOpenTetris;
   }
 
-  console.log(info);
-
   return (
     <div className="container">    
-      <div className="information">
-        <Header/>
-        <Welcome/>
-        <div className='modals'>
+      <ThemeProvider>
+        <div className={`information ${theme}`}>
+          <Header/>
+          <Welcome/>
+          <div className='modals'>
           {!error ? (
-            info.map((el) => {
-              return (<span className="clickModal" onClick={() => openModal(el)} key={el.id}>
+             info.map((el) => {
+              return (<span className={`clickModal ${theme}`} onClick={() => openModal(el)} key={el.id}>
                 <p>{el.name}</p>
                 <Modal isOpen={handleModalState(el)} name={el.name} closeModal={() => closeModal(el)}>
                 <img src="http://www.placeimg.com/400/100/tech" alt={el.name}/>
@@ -88,8 +90,9 @@ function App() {
             </div>
             ) 
           }
+          </div>
         </div>
-      </div>
+      </ThemeProvider>
       <div className='boxes'>
         <Box link="https://github.com/AharomG" name="GitHub" imgURL={Octocat} varStyle="1"/>
         <Box link="https://www.linkedin.com/in/aharom-gonzalez-anaure/" name="LinkedIn" imgURL={linkedin} varStyle="2"/>
