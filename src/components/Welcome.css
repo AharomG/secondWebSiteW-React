@@ -1,3 +1,7 @@
+.welcome{
+    padding: 0;
+    margin: 0;
+}
 .welcome p{
     margin: 1vh;
 }

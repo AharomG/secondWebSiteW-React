@@ -1,10 +1,7 @@
-.boxes{
-    --boxSize: 9vh;
-}
 .box {
+    --boxSize: 9vh;
     position: fixed;
     overflow: hidden;
-    background-color: grey;
     width: var(--boxSize);
     min-width: 21px;
     height: var(--boxSize);

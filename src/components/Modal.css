@@ -8,12 +8,6 @@
     display: none;
     justify-content: center;
 }
-.modals{
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    justify-content: space-evenly;
-}
 
 .modal.isOpen{
     display: flex;
@@ -22,7 +16,6 @@
 
 .modalContainer{
     position: relative;
-    background-color: white;
     min-width: 320px;
     max-width: 480px;
     min-height: 200px;
@@ -43,7 +36,6 @@
 }
 
 .clickModal p{
-    background-color: grey;
     display: inline-flex;
     border-style: dotted;
 }
